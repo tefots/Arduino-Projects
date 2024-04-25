@@ -1,0 +1,13 @@
+int potPin = A0;  // Pin connected to the potentiometer
+int ledPin = 13;   // Pin connected to the LED
+
+  void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(potPin, OUTPUT);
+}
+
+  void loop() {
+  int val = analogRead(potPin);  // Read potentiometer value (0-1023)
+  int brightness = map(val, 0, 1023, 0, 255);  // Map value to LED brightness (0-255)
+  analogWrite(ledPin, brightness);  // Set LED brightness
+}
